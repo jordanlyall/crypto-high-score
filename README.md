@@ -3,7 +3,7 @@
 
 [Live Example](https://www.cryptohighscore.co)
 
-The first high score leaderboard on the blockchain. Add your name to the global, imutable leaderboard by paying in ETH. Promote your website or favorite crypto project. It's like the million dollar homepage on the Ethereum blockchain.
+The first high score leaderboard on the blockchain. Add your name to the global, immutable leaderboard by paying in ETH. Promote your website or favorite crypto project. It's like the million dollar homepage on the Ethereum blockchain.
 
 Large portions taken from [Eth-Token-Sender](https://github.com/MetaMask/Eth-Token-Sender/). 
 
