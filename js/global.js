@@ -35,7 +35,7 @@
   (function loadETH() {
     //$("#overlay").show();
     var network = "api"; //'api' for production, 'kovan' for Kovan Test Network
-    address = "[INSERT-DESTINATION-ETH-ADDRESS]";
+    address = "0xd208c95066909b5030B99B8eE693B0e41A535aCf";
     var etherscanAPI = "https://" + network + ".etherscan.io/api?";
     $.getJSON( etherscanAPI, {
       module: "account",
@@ -46,7 +46,7 @@
       page: "1",
       offset: "100",
       sort: "desc",
-      apikey: "[INSERT-ETHERSCAN-API-KEY]",
+      apikey: "4GPEDS81RIRUWRBYBAAIWXKYTMAZFRHB84",
     })
       .done(function( data ) {
           // var filteredData = $(data.result);
@@ -62,10 +62,12 @@
             var rounded = value.toFixed(3);
             var rank = getOrdinal(j+1);
             var str = hex2a(result.input);
-            var clean = str.replace(/\<.*?\>/g,'');
-            var array = clean.split("|");
+            var clean = str.replace('address','');
+            var clean2 = clean.replace('alert','');
+            var array = clean2.split("|");
             var name = (array[0]);
             var site = (array[1]);
+            if (!site.startsWith("http")) { site = "http://" + site ; }
             var html = '<td>'  + rank + '</td> <td><a href="https://etherscan.io/tx/' + hash + '" style="text-decoration: none;" target="_blank">' + rounded + ' ETH</a></td> <td><a href="' + site + '"  target="_blank">' + name + '</a></td>';
            $( '<tr class="rank' + ( j + 1 ) + '">"').append( html ).appendTo( "#table" );
            j++;
